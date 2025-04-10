@@ -1,18 +1,14 @@
 plugins {
-	alias(libs.plugins.android.application)
+	alias(libs.plugins.android.library)
 	alias(libs.plugins.jetbrains.kotlin.android)
 }
 
 android {
-	namespace = "com.example.sekvenia"
+	namespace = "com.example.posters"
 	compileSdk = 34
 
 	defaultConfig {
-		applicationId = "com.example.sekvenia"
 		minSdk = 26
-		targetSdk = 34
-		versionCode = 1
-		versionName = "1.0"
 
 		testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 	}
@@ -23,9 +19,6 @@ android {
 			proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
 		}
 	}
-	composeOptions {
-		kotlinCompilerExtensionVersion = "1.5.3"
-	}
 	compileOptions {
 		sourceCompatibility = JavaVersion.VERSION_11
 		targetCompatibility = JavaVersion.VERSION_11
@@ -33,14 +26,15 @@ android {
 	kotlinOptions {
 		jvmTarget = "11"
 	}
+	composeOptions {
+		kotlinCompilerExtensionVersion = "1.5.3"
+	}
 	buildFeatures {
-		viewBinding = true
 		compose = true
 	}
 }
 
 dependencies {
-	implementation(project(":feature:posters"))
 
 	implementation(libs.androidx.core.ktx)
 	implementation(libs.androidx.appcompat)
@@ -48,15 +42,10 @@ dependencies {
 
 	implementation(libs.androidx.activity.compose)
 	implementation(libs.androidx.ui)
-	implementation(libs.androidx.material3)
 	implementation(libs.androidx.ui.tooling)
 	implementation(libs.androidx.runtime)
 	implementation(libs.androidx.lifecycle.viewmodel.compose)
-
-	implementation(libs.cicerone)
-
-	implementation(libs.koin.android)
-	implementation(libs.koin.core)
+	implementation(libs.androidx.material3)
 
 	testImplementation(libs.junit)
 	androidTestImplementation(libs.androidx.junit)
