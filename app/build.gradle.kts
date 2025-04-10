@@ -41,6 +41,7 @@ android {
 
 dependencies {
 	implementation(project(":feature:posters"))
+	implementation(project(":shared:films"))
 
 	implementation(libs.androidx.core.ktx)
 	implementation(libs.androidx.appcompat)

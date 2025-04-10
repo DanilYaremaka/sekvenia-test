@@ -1,10 +1,8 @@
-package com.example.sekvenia
+package com.example.films
 
 import android.app.Application
-import com.example.sekvenia.di.ciceroneModule
-import com.example.sekvenia.di.mainModule
-import com.github.terrakok.cicerone.Cicerone
-import com.github.terrakok.cicerone.Router
+import com.example.films.di.ciceroneModule
+import com.example.films.di.mainModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

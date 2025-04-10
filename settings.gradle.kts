@@ -23,3 +23,4 @@ rootProject.name = "sekvenia"
 include(":app")
 include(":feature:details")
 include(":feature:posters")
+include(":shared:films")

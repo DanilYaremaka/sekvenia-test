@@ -1,11 +1,11 @@
-package com.example.sekvenia.ui
+package com.example.films.ui
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.sekvenia.R
-import com.example.sekvenia.databinding.ActivityMainBinding
-import com.example.sekvenia.presentation.MainViewModel
+import com.example.films.R
+import com.example.films.databinding.ActivityMainBinding
+import com.example.films.presentation.MainViewModel
 import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.androidx.AppNavigator
 import org.koin.android.ext.android.inject
