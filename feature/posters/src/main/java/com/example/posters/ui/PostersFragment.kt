@@ -9,6 +9,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
+import com.example.posters.presentation.PostersViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class PostersFragment: Fragment() {
 
@@ -17,12 +19,19 @@ class PostersFragment: Fragment() {
 		fun newInstance(): PostersFragment = PostersFragment()
 	}
 
+	private val viewModel: PostersViewModel by viewModel()
+
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
 		ComposeView(requireContext()).apply {
 			setContent {
 				Screen()
 			}
 		}
+
+	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+		super.onViewCreated(view, savedInstanceState)
+		viewModel.load()
+	}
 }
 
 @Composable

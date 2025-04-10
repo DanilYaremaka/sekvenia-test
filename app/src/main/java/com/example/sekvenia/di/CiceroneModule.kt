@@ -1,4 +1,4 @@
-package com.example.films.di
+package com.example.sekvenia.di
 
 import com.github.terrakok.cicerone.Cicerone
 import com.github.terrakok.cicerone.Router

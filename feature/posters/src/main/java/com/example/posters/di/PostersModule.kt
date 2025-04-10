@@ -7,6 +7,8 @@ import com.example.posters.data.repository.PostersRepositoryImpl
 import com.example.posters.domain.repository.PostersRepository
 import com.example.posters.domain.usecase.GetAllPostersUseCase
 import com.example.posters.domain.usecase.GetGenresUseCase
+import com.example.posters.presentation.PostersViewModel
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 
@@ -18,4 +20,6 @@ val postersModule = module {
 
 	single { GetAllPostersUseCase(get()) }
 	single { GetGenresUseCase(get()) }
+
+	viewModel { PostersViewModel(get()) }
 }

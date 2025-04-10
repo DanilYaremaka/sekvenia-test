@@ -1,6 +1,6 @@
-package com.example.films.di
+package com.example.sekvenia.di
 
-import com.example.films.presentation.MainViewModel
+import com.example.sekvenia.presentation.MainViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

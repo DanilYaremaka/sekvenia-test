@@ -9,8 +9,8 @@ data class FilmModel(
 	@Json(name = "localized_name") val localizedNamed: String,
 	val name: String,
 	val year: Int,
-	val rating: Float,
-	@Json(name = "image_url") val imageUrl: String,
-	val description: String,
+	val rating: Float?,
+	@Json(name = "image_url") val imageUrl: String?,
+	val description: String?,
 	val genres: List<String>,
 )

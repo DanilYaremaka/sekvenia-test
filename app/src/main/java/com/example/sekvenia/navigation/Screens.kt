@@ -1,4 +1,4 @@
-package com.example.films.navigation
+package com.example.sekvenia.navigation
 
 import com.example.posters.ui.PostersFragment
 import com.github.terrakok.cicerone.androidx.FragmentScreen

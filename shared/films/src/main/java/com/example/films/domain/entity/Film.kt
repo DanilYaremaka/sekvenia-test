@@ -5,8 +5,8 @@ data class Film(
 	val localizedNamed: String,
 	val name: String,
 	val year: Int,
-	val rating: Float,
-	val imageUrl: String,
-	val description: String,
+	val rating: Float?,
+	val imageUrl: String?,
+	val description: String?,
 	val genres: List<String>,
 )

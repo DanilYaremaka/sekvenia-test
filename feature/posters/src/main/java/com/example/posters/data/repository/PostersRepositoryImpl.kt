@@ -14,5 +14,5 @@ class PostersRepositoryImpl(
 	}
 
 	override suspend fun getAllPosters(): List<Film> =
-		remoteDataSource.getAllPosters().map { it.toEntity() }.sortedBy { it.localizedNamed }
+		remoteDataSource.getAllPosters().films.map { it.toEntity() }.sortedBy { it.localizedNamed }
 }

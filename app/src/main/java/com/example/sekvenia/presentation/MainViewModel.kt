@@ -1,7 +1,7 @@
-package com.example.films.presentation
+package com.example.sekvenia.presentation
 
 import androidx.lifecycle.ViewModel
-import com.example.films.navigation.Screens
+import com.example.sekvenia.navigation.Screens
 import com.github.terrakok.cicerone.Router
 
 class MainViewModel(

@@ -1,8 +1,10 @@
-package com.example.films
+package com.example.sekvenia
 
 import android.app.Application
-import com.example.films.di.ciceroneModule
-import com.example.films.di.mainModule
+import com.example.posters.di.postersModule
+import com.example.sekvenia.di.ciceroneModule
+import com.example.sekvenia.di.mainModule
+import com.example.sekvenia.di.networkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -19,7 +21,9 @@ class SekveniaApp : Application() {
 
 			modules(
 				ciceroneModule,
-				mainModule
+				mainModule,
+				networkModule,
+				postersModule,
 			)
 		}
 	}
