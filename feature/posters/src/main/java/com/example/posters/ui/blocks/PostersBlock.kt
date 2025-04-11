@@ -1,5 +1,6 @@
 package com.example.posters.ui.blocks
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
@@ -31,19 +32,20 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.example.films.domain.entity.Film
-import com.example.posters.R
+import com.example.ui.R
 import com.example.ui.black
 import com.example.ui.white
 
 @Composable
 private fun PosterItem(
-	name: String,
-	imageUrl: String?,
+	film: Film,
+	onPosterClick: (Film) -> Unit,
 ) {
 	Card(
 		modifier = Modifier
 			.height(270.dp)
-			.fillMaxWidth(),
+			.fillMaxWidth()
+			.clickable { onPosterClick(film) },
 		colors = CardDefaults.cardColors().copy(containerColor = white),
 		shape = RectangleShape,
 	) {
@@ -54,8 +56,8 @@ private fun PosterItem(
 				.clip(MaterialTheme.shapes.medium),
 		) {
 			AsyncImage(
-				model = imageUrl,
-				contentDescription = name,
+				model = film.imageUrl,
+				contentDescription = film.localizedNamed,
 				modifier = Modifier
 					.fillMaxSize(),
 				contentScale = ContentScale.Crop,
@@ -67,7 +69,7 @@ private fun PosterItem(
 		Spacer(modifier = Modifier.height(8.dp))
 
 		Text(
-			text = name,
+			text = film.localizedNamed,
 			modifier = Modifier.fillMaxWidth(),
 			fontSize = 16.sp,
 			color = black,
@@ -84,6 +86,7 @@ private fun PosterItem(
 fun LazyItemScope.PostersGrid(
 	posters: List<Film>,
 	modifier: Modifier = Modifier,
+	onPosterClick: (Film) -> Unit,
 ) {
 	val gridState = rememberLazyGridState()
 
@@ -101,7 +104,10 @@ fun LazyItemScope.PostersGrid(
 		verticalArrangement = Arrangement.spacedBy(16.dp),
 	) {
 		items(items = posters, key = { it.id }) {
-			PosterItem(imageUrl = it.imageUrl, name = it.localizedNamed)
+			PosterItem(
+				film = it,
+				onPosterClick = onPosterClick,
+			)
 		}
 	}
 }

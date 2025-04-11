@@ -68,6 +68,7 @@ fun PostersScreen(
 				posters = uiState.filteredPosters,
 				onGenreChange = { genre -> applyIntent(PostersIntent.ChangeGenre(genre)) },
 				selectedGenre = uiState.selectedGenre,
+				onPosterClick = { film -> applyIntent(PostersIntent.OpenFilmDetails(film)) },
 			)
 			PostersState.Initial    -> Loading()
 			PostersState.Loading    -> Loading()

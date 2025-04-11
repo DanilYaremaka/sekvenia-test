@@ -32,6 +32,7 @@ fun Content(
 	genres: Set<String>,
 	selectedGenre: String?,
 	onGenreChange: (String) -> Unit,
+	onPosterClick: (Film) -> Unit,
 ) {
 	LazyColumn(
 		modifier = modifier
@@ -83,6 +84,7 @@ fun Content(
 			PostersGrid(
 				posters = posters,
 				modifier = Modifier,
+				onPosterClick = onPosterClick,
 			)
 		}
 	}
