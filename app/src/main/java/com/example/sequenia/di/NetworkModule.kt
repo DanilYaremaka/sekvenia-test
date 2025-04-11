@@ -1,4 +1,4 @@
-package com.example.sekvenia.di
+package com.example.sequenia.di
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter

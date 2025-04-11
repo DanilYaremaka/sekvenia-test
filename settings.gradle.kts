@@ -19,7 +19,7 @@ dependencyResolutionManagement {
 	}
 }
 
-rootProject.name = "sekvenia"
+rootProject.name = "sequenia"
 include(":app")
 include(":component:ui")
 include(":feature:details")

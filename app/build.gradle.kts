@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-	namespace = "com.example.sekvenia"
+	namespace = "com.example.sequenia"
 	compileSdk = 34
 
 	defaultConfig {
-		applicationId = "com.example.sekvenia"
+		applicationId = "com.example.sequenia"
 		minSdk = 26
 		targetSdk = 34
 		versionCode = 1

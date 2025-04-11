@@ -1,11 +1,11 @@
-package com.example.sekvenia.ui
+package com.example.sequenia.ui
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.sekvenia.R
-import com.example.sekvenia.databinding.ActivityMainBinding
-import com.example.sekvenia.presentation.MainViewModel
+import com.example.sequenia.R
+import com.example.sequenia.databinding.ActivityMainBinding
+import com.example.sequenia.presentation.MainViewModel
 import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.androidx.AppNavigator
 import org.koin.android.ext.android.inject

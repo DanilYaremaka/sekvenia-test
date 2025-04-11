@@ -1,4 +1,4 @@
-package com.example.sekvenia.navigation
+package com.example.sequenia.navigation
 
 import com.example.details.ui.DetailsFragment
 import com.example.films.domain.entity.Film

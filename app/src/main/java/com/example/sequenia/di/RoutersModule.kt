@@ -1,9 +1,9 @@
-package com.example.sekvenia.di
+package com.example.sequenia.di
 
 import com.example.details.presentation.DetailsRouter
 import com.example.posters.presentation.PostersRouter
-import com.example.sekvenia.navigation.routers.DetailsRouterImpl
-import com.example.sekvenia.navigation.routers.PostersRouterImpl
+import com.example.sequenia.navigation.routers.DetailsRouterImpl
+import com.example.sequenia.navigation.routers.PostersRouterImpl
 import org.koin.dsl.module
 
 val routerModule = module {

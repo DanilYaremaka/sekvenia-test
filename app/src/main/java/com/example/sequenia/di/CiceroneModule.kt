@@ -1,4 +1,4 @@
-package com.example.sekvenia.di
+package com.example.sequenia.di
 
 import com.github.terrakok.cicerone.Cicerone
 import com.github.terrakok.cicerone.Router

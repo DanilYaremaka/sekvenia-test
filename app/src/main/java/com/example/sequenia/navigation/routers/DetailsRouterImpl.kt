@@ -1,4 +1,4 @@
-package com.example.sekvenia.navigation.routers
+package com.example.sequenia.navigation.routers
 
 import com.example.details.presentation.DetailsRouter
 import com.github.terrakok.cicerone.Router

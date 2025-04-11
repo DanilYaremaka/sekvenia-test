@@ -1,7 +1,7 @@
-package com.example.sekvenia.presentation
+package com.example.sequenia.presentation
 
 import androidx.lifecycle.ViewModel
-import com.example.sekvenia.navigation.Screens
+import com.example.sequenia.navigation.Screens
 import com.github.terrakok.cicerone.Router
 
 class MainViewModel(
