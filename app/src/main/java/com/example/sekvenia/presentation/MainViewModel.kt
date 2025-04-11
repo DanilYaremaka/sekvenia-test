@@ -8,7 +8,7 @@ class MainViewModel(
 	private val router: Router
 ) : ViewModel() {
 
-	fun openFragment() {
+	fun openStartScreen() {
 		router.newRootScreen(Screens.Posters())
 	}
 }

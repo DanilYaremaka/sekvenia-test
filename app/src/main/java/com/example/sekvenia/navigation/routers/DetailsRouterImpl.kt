@@ -6,6 +6,6 @@ import com.github.terrakok.cicerone.Router
 class DetailsRouterImpl(private val router: Router) : DetailsRouter {
 
 	override fun navigateBack() {
-		router.backTo(null)
+		router.exit()
 	}
 }

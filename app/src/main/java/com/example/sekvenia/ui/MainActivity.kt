@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 		enableEdgeToEdge()
 		setContentView(binding.root)
 
-		viewModel.openFragment()
+		viewModel.openStartScreen()
 	}
 
 	override fun onResume() {
