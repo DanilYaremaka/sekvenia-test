@@ -21,6 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "sekvenia"
 include(":app")
+include(":component:ui")
 include(":feature:details")
 include(":feature:posters")
 include(":shared:films")

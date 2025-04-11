@@ -5,6 +5,7 @@ import com.example.posters.di.postersModule
 import com.example.sekvenia.di.ciceroneModule
 import com.example.sekvenia.di.mainModule
 import com.example.sekvenia.di.networkModule
+import com.example.sekvenia.di.routerModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -24,6 +25,7 @@ class SekveniaApp : Application() {
 				mainModule,
 				networkModule,
 				postersModule,
+				routerModule,
 			)
 		}
 	}

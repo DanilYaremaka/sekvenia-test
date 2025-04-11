@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="films_title">Фильмы</string>
+	<string name="connection_error_message">Ошибка подключения сети</string>
+	<string name="reload">Повторить</string>
+	<string name="genre_title">Жанры</string>
+</resources>

@@ -13,10 +13,10 @@ class PostersRepositoryImpl(
 		val genres = mutableSetOf<String>()
 		films.forEach { film ->
 			film.genres.forEach { genre ->
-				genres.add(genre)
+				genres.add(genre.replaceFirstChar { it.uppercaseChar() })
 			}
 		}
-		return genres
+		return genres.sorted().toSet()
 	}
 
 	override suspend fun getAllPosters(): List<Film> =
