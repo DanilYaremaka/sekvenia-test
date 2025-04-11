@@ -55,12 +55,13 @@ fun PostersScreen(
 		snackbarHost = { SnackbarHost(hostState = snackBarHostState) },
 	) { paddingValues ->
 
-		when (state) {
+		when (val uiState = state) {
 			is PostersState.Content -> Content(
 				modifier = Modifier.padding(paddingValues),
-				genres = (state as PostersState.Content).genres,
+				genres = uiState.genres,
+				posters = uiState.filteredPosters,
 				onGenreChange = { genre -> applyIntent(PostersIntent.ChangeGenre(genre)) },
-				selectedGenre = (state as PostersState.Content).selectedGenre,
+				selectedGenre = uiState.selectedGenre,
 			)
 			PostersState.Initial    -> Loading()
 			PostersState.Loading    -> Loading()

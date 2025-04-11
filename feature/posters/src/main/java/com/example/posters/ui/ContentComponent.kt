@@ -12,8 +12,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.films.domain.entity.Film
 import com.example.posters.R
 import com.example.posters.ui.blocks.BlockTitleText
+import com.example.posters.ui.blocks.PostersGrid
 import com.example.posters.ui.blocks.TextCard
 import com.example.ui.selection
 import com.example.ui.white
@@ -21,6 +23,7 @@ import com.example.ui.white
 @Composable
 fun Content(
 	modifier: Modifier,
+	posters: List<Film>,
 	genres: Set<String>,
 	selectedGenre: String?,
 	onGenreChange: (String) -> Unit,
@@ -67,8 +70,10 @@ fun Content(
 		}
 
 		item {
-			Spacer(modifier = Modifier.height(8.dp))
+			PostersGrid(
+				posters = posters,
+				modifier = Modifier,
+			)
 		}
-
 	}
 }

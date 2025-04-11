@@ -12,5 +12,6 @@ sealed interface PostersState {
 		val genres: Set<String>,
 		val selectedGenre: String?,
 		val posters: List<Film>,
+		val filteredPosters: List<Film>
 	) : PostersState
 }

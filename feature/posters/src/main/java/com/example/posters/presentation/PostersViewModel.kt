@@ -44,13 +44,11 @@ class PostersViewModel(
 			val allPosters = getAllPostersUseCase()
 			val genres = getGenresUseCase(allPosters)
 
-			val filteredPosters = if (genre == null) allPosters
-				else allPosters.filterByGenre(genre)
-
 			_state.value = PostersState.Content(
 				genres = genres,
 				selectedGenre = genre,
-				posters = filteredPosters,
+				posters = allPosters,
+				filteredPosters = allPosters,
 			)
 		}
 	}
@@ -60,7 +58,10 @@ class PostersViewModel(
 		val selectedGenre: String? = if (currentState.selectedGenre == genre) null
 			else genre
 
-		_state.value = currentState.copy(selectedGenre = selectedGenre)
+		_state.value = currentState.copy(
+			selectedGenre = selectedGenre,
+			filteredPosters = currentState.posters.getFilteredPosters(selectedGenre)
+		)
 	}
 
 	private fun openFilmDetails(film: Film) {

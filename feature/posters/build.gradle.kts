@@ -55,6 +55,9 @@ dependencies {
 	implementation("com.squareup.moshi:moshi-kotlin:1.15.0")
 	implementation("com.squareup.moshi:moshi-kotlin-codegen:1.15.0")
 	implementation("com.squareup.moshi:moshi-adapters:1.15.0")
+	
+	implementation("io.coil-kt.coil3:coil-compose:3.0.0")
+	implementation("io.coil-kt.coil3:coil-network-okhttp:3.0.0")
 
 	testImplementation(libs.junit)
 	androidTestImplementation(libs.androidx.junit)
