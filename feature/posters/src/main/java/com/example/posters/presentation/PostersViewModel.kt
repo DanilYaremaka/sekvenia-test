@@ -26,6 +26,7 @@ class PostersViewModel(
 	val event: Flow<PostersEvent> = _event.receiveAsFlow()
 
 	private val getErrorHandler = CoroutineExceptionHandler { _, _ ->
+		_state.value = PostersState.Error
 		_event.trySend(PostersEvent.Error)
 	}
 

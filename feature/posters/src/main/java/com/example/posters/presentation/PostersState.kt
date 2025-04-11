@@ -14,4 +14,6 @@ sealed interface PostersState {
 		val posters: List<Film>,
 		val filteredPosters: List<Film>
 	) : PostersState
+
+	data object Error : PostersState
 }

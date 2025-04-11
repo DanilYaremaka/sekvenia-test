@@ -23,6 +23,7 @@ import com.example.posters.presentation.PostersIntent
 import com.example.posters.presentation.PostersState
 import com.example.ui.appBarBackground
 import com.example.ui.component.AppBarText
+import com.example.ui.component.CustomSnackBar
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
 
@@ -52,9 +53,14 @@ fun PostersScreen(
 				colors = TopAppBarDefaults.topAppBarColors().copy(containerColor = appBarBackground)
 			)
 		},
-		snackbarHost = { SnackbarHost(hostState = snackBarHostState) },
+		snackbarHost = { SnackbarHost(
+			hostState = snackBarHostState,
+			snackbar = {
+				CustomSnackBar(snackBarData = it)
+			}
+		)
+	   },
 	) { paddingValues ->
-
 		when (val uiState = state) {
 			is PostersState.Content -> Content(
 				modifier = Modifier.padding(paddingValues),
@@ -65,21 +71,21 @@ fun PostersScreen(
 			)
 			PostersState.Initial    -> Loading()
 			PostersState.Loading    -> Loading()
+			PostersState.Error      -> Unit
 		}
 
 		LaunchedEffect(key1 = Unit) {
 			eventFlow.collect {
 				when (it) {
 					PostersEvent.Error -> {
-						val result = snackBarHostState
-							.showSnackbar(
-								message = context.getString(R.string.connection_error_message),
-								actionLabel = context.getString(R.string.reload),
-								duration = SnackbarDuration.Indefinite
-							)
+						val result = snackBarHostState.showSnackbar(
+							message = context.getString(R.string.connection_error_message),
+							actionLabel = context.getString(R.string.reload),
+							duration = SnackbarDuration.Indefinite
+						)
 						when (result) {
 							SnackbarResult.ActionPerformed -> applyIntent(PostersIntent.LoadData(genre = null))
-							SnackbarResult.Dismissed       -> Unit
+							SnackbarResult.Dismissed -> Unit
 						}
 					}
 				}

@@ -75,7 +75,7 @@ private fun PosterItem(
 			letterSpacing = TextUnit(value = 0.1f, type = TextUnitType.Sp),
 			fontWeight = FontWeight.W700,
 			maxLines = 2,
-			overflow = TextOverflow.Ellipsis
+			overflow = TextOverflow.Ellipsis,
 		)
 	}
 }

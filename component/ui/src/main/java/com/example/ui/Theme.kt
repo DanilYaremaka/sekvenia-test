@@ -15,6 +15,7 @@ val DarkColorScheme = darkColorScheme(
 	onTertiary = Color.LightGray,
 	onBackground = Color(0xFF1C1B1F),
 	onSurface = Color(0xFF1C1B1F),
+	primaryContainer = selection,
 )
 
 val LightColorScheme = lightColorScheme(
@@ -25,6 +26,7 @@ val LightColorScheme = lightColorScheme(
 	onTertiary = Color.LightGray,
 	onBackground = Color(0xFF1C1B1F),
 	onSurface = Color(0xFF1C1B1F),
+	primaryContainer = selection,
 )
 
 @Composable

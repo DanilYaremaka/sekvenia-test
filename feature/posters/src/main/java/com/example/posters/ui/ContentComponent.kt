@@ -11,12 +11,17 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.TextUnit
+import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.films.domain.entity.Film
 import com.example.posters.R
 import com.example.posters.ui.blocks.BlockTitleText
 import com.example.posters.ui.blocks.PostersGrid
 import com.example.posters.ui.blocks.TextCard
+import com.example.ui.black
 import com.example.ui.selection
 import com.example.ui.white
 
@@ -55,6 +60,11 @@ fun Content(
 					modifier = Modifier
 						.fillMaxWidth()
 						.padding(vertical = 10.dp, horizontal = 16.dp),
+					fontSize = 16.sp,
+					color = black,
+					lineHeight = 20.sp,
+					letterSpacing = TextUnit(value = 0.1f, type = TextUnitType.Sp),
+					fontWeight = FontWeight.W400,
 				)
 			}
 		}
