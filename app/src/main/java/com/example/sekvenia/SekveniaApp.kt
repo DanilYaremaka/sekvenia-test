@@ -1,6 +1,7 @@
 package com.example.sekvenia
 
 import android.app.Application
+import com.example.details.di.detailsModule
 import com.example.posters.di.postersModule
 import com.example.sekvenia.di.ciceroneModule
 import com.example.sekvenia.di.mainModule
@@ -26,6 +27,7 @@ class SekveniaApp : Application() {
 				networkModule,
 				postersModule,
 				routerModule,
+				detailsModule,
 			)
 		}
 	}

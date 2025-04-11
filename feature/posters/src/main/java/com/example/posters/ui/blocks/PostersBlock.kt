@@ -57,7 +57,7 @@ private fun PosterItem(
 		) {
 			AsyncImage(
 				model = film.imageUrl,
-				contentDescription = film.localizedNamed,
+				contentDescription = film.localizedName,
 				modifier = Modifier
 					.fillMaxSize(),
 				contentScale = ContentScale.Crop,
@@ -69,7 +69,7 @@ private fun PosterItem(
 		Spacer(modifier = Modifier.height(8.dp))
 
 		Text(
-			text = film.localizedNamed,
+			text = film.localizedName,
 			modifier = Modifier.fillMaxWidth(),
 			fontSize = 16.sp,
 			color = black,

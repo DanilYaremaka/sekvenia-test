@@ -24,5 +24,6 @@ fun AppBarText(
 		lineHeight = 22.sp,
 		letterSpacing = TextUnit(value = 0.15f, type = TextUnitType.Sp),
 		fontWeight = FontWeight.W500,
+		maxLines = 1
 	)
 }
