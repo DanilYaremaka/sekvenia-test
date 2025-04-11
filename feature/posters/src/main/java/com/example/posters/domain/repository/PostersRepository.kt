@@ -4,7 +4,7 @@ import com.example.films.domain.entity.Film
 
 interface PostersRepository {
 
-	fun getGenres(films: List<Film>): List<String>
+	fun getGenres(films: List<Film>): Set<String>
 
 	suspend fun getAllPosters(): List<Film>
 }

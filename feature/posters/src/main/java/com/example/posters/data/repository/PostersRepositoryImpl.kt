@@ -9,8 +9,14 @@ class PostersRepositoryImpl(
 	private val remoteDataSource: PostersDataSource
 ): PostersRepository {
 
-	override fun getGenres(films: List<Film>): List<String> {
-		TODO("Not yet implemented")
+	override fun getGenres(films: List<Film>): Set<String> {
+		val genres = mutableSetOf<String>()
+		films.forEach { film ->
+			film.genres.forEach { genre ->
+				genres.add(genre)
+			}
+		}
+		return genres
 	}
 
 	override suspend fun getAllPosters(): List<Film> =

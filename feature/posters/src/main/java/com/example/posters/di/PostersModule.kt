@@ -21,5 +21,11 @@ val postersModule = module {
 	single { GetAllPostersUseCase(get()) }
 	single { GetGenresUseCase(get()) }
 
-	viewModel { PostersViewModel(get()) }
+	viewModel {
+		PostersViewModel(
+			getAllPostersUseCase = get(),
+			getGenresUseCase = get(),
+			router = get(),
+		)
+	}
 }

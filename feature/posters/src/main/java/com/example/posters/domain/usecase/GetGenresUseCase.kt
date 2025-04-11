@@ -5,4 +5,4 @@ import com.example.posters.domain.repository.PostersRepository
 
 class GetGenresUseCase(
 	repository: PostersRepository
-): (List<Film>) -> List<String> by repository::getGenres
+): (List<Film>) -> Set<String> by repository::getGenres
