@@ -11,6 +11,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -38,10 +39,6 @@ fun PostersScreen(
 	val snackBarHostState = remember { SnackbarHostState() }
 	val context = LocalContext.current
 
-	LaunchedEffect(key1 = true) {
-		applyIntent(PostersIntent.LoadData(genre = null))
-	}
-
 	Scaffold(
 		topBar = {
 			TopAppBar(
@@ -62,7 +59,10 @@ fun PostersScreen(
 	   },
 	) { paddingValues ->
 		when (val uiState = state) {
-			is PostersState.Content -> Content(
+			is PostersState.Initial	   -> SideEffect { applyIntent(PostersIntent.LoadData(genre = null)) }
+			is PostersState.Loading    -> Loading()
+
+			is PostersState.Content    -> Content(
 				modifier = Modifier.padding(paddingValues),
 				genres = uiState.genres,
 				posters = uiState.filteredPosters,
@@ -70,9 +70,8 @@ fun PostersScreen(
 				selectedGenre = uiState.selectedGenre,
 				onPosterClick = { film -> applyIntent(PostersIntent.OpenFilmDetails(film)) },
 			)
-			PostersState.Initial    -> Loading()
-			PostersState.Loading    -> Loading()
-			PostersState.Error      -> Unit
+
+			is PostersState.Error      -> Unit
 		}
 
 		LaunchedEffect(key1 = Unit) {
@@ -86,7 +85,7 @@ fun PostersScreen(
 						)
 						when (result) {
 							SnackbarResult.ActionPerformed -> applyIntent(PostersIntent.LoadData(genre = null))
-							SnackbarResult.Dismissed -> Unit
+							SnackbarResult.Dismissed 	   -> Unit
 						}
 					}
 				}
