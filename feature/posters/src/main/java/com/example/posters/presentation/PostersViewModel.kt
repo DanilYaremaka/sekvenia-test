@@ -49,7 +49,7 @@ class PostersViewModel(
 				genres = genres,
 				selectedGenre = genre,
 				posters = allPosters,
-				filteredPosters = allPosters,
+				filteredPosters = allPosters.getFilteredPosters(genre),
 			)
 		}
 	}
