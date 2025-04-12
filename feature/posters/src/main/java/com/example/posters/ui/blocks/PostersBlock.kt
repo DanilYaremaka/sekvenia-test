@@ -58,8 +58,7 @@ private fun PosterItem(
 			AsyncImage(
 				model = film.imageUrl,
 				contentDescription = film.localizedName,
-				modifier = Modifier
-					.fillMaxSize(),
+				modifier = Modifier.fillMaxSize(),
 				contentScale = ContentScale.Crop,
 				placeholder = painterResource(R.drawable.empty_image),
 				error = painterResource(R.drawable.empty_image),

@@ -20,7 +20,7 @@ import com.example.ui.black
 
 @Composable
 internal fun TextCard(
-	modifier: Modifier,
+	modifier: Modifier = Modifier,
 	containerColor: Color,
 	content: @Composable ColumnScope.() -> Unit
 ) {

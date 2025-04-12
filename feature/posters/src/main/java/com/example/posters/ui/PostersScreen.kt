@@ -1,6 +1,5 @@
 package com.example.posters.ui
 
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarDuration
@@ -15,7 +14,6 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.example.posters.R
@@ -63,12 +61,13 @@ fun PostersScreen(
 			is PostersState.Loading    -> Loading()
 
 			is PostersState.Content    -> Content(
-				modifier = Modifier.padding(paddingValues),
 				genres = uiState.genres,
 				posters = uiState.filteredPosters,
 				onGenreChange = { genre -> applyIntent(PostersIntent.ChangeGenre(genre)) },
 				selectedGenre = uiState.selectedGenre,
 				onPosterClick = { film -> applyIntent(PostersIntent.OpenFilmDetails(film)) },
+				onRefresh = { genre -> applyIntent(PostersIntent.LoadData(genre)) },
+				contentPaddingValues = paddingValues,
 			)
 
 			is PostersState.Error      -> Unit
