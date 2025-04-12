@@ -25,6 +25,11 @@ android {
 	buildFeatures {
 		compose = true
 	}
+	testOptions {
+		unitTests.all {
+			it.useJUnitPlatform()
+		}
+	}
 }
 
 dependencies {
@@ -59,7 +64,14 @@ dependencies {
 	implementation(libs.coil3.coil.compose)
 	implementation(libs.coil.network.okhttp)
 
-	testImplementation(libs.junit)
-	androidTestImplementation(libs.androidx.junit)
-	androidTestImplementation(libs.androidx.espresso.core)
+	testImplementation(libs.junit.jupiter.api)
+	testImplementation(libs.junit.jupiter.engine)
+	testImplementation(libs.junit.jupiter.params)
+	testImplementation(libs.junit.platform.suite)
+	testImplementation(libs.mockito.inline)
+	testImplementation(libs.mockito.mockito.junit.jupiter)
+	testImplementation(libs.mockito.core)
+	testImplementation(libs.mockito.kotlin)
+	testImplementation(libs.kotlinx.coroutines.test)
+	testImplementation(libs.turbine)
 }

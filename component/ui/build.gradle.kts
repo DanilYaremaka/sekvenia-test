@@ -31,7 +31,6 @@ android {
 
 dependencies {
 
-	implementation(libs.androidx.activity.compose)
 	implementation(libs.androidx.ui)
 	implementation(libs.androidx.ui.tooling)
 	implementation(libs.androidx.runtime)

@@ -67,8 +67,4 @@ dependencies {
 	implementation(libs.moshi.kotlin)
 	implementation(libs.moshi.kotlin.codegen)
 	implementation(libs.moshi.adapters)
-
-	testImplementation(libs.junit)
-	androidTestImplementation(libs.androidx.junit)
-	androidTestImplementation(libs.androidx.espresso.core)
 }
